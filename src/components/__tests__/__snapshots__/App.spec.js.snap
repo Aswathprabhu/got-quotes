@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Page - Initial Render Initial render 1`] = `
+<div>
+  <div
+    id="app"
+  >
+    <div
+      class="card"
+    >
+      <div
+        class="loader-container"
+      >
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="card"
+    >
+      <div
+        class="loader-container"
+      >
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="card"
+    >
+      <div
+        class="loader-container"
+      >
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="card"
+    >
+      <div
+        class="loader-container"
+      >
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+         
+        <div
+          class="loader sm"
+        />
+         
+        <div
+          class="loader"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
