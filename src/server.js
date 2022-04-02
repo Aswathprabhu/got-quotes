@@ -22,12 +22,12 @@ export function makeServer() {
       server.createList('quote', 2);
     },
     routes() {
-      // this.passthrough('https://game-of-thrones-quotes.herokuapp.com/**');
-      this.urlPrefix = 'https://game-of-thrones-quotes.herokuapp.com';
-      this.namespace = '/v1';
-      this.get('/random/2', (schema) => {
-        return schema.quotes.all();
-      });
+      this.passthrough('https://game-of-thrones-quotes.herokuapp.com/**');
+      // this.urlPrefix = 'https://game-of-thrones-quotes.herokuapp.com';
+      // this.namespace = '/v1';
+      // this.get('/random/2', (schema) => {
+      //   return schema.quotes.all();
+      // });
     },
   });
 }
