@@ -1,4 +1,4 @@
-import { createServer, Factory, Model } from 'miragejs';
+import { createServer, Factory, Model, RestSerializer } from 'miragejs';
 
 export function makeServer() {
   return createServer({
@@ -19,15 +19,26 @@ export function makeServer() {
       }),
     },
     seeds(server) {
-      server.createList('quote', 2);
+      server.createList('quote', 20);
     },
     routes() {
-      this.passthrough('https://game-of-thrones-quotes.herokuapp.com/**');
-      // this.urlPrefix = 'https://game-of-thrones-quotes.herokuapp.com';
-      // this.namespace = '/v1';
-      // this.get('/random/2', (schema) => {
-      //   return schema.quotes.all();
-      // });
+      // this.passthrough('https://game-of-thrones-quotes.herokuapp.com/**');
+      this.urlPrefix = 'https://game-of-thrones-quotes.herokuapp.com';
+      this.namespace = '/v1';
+      this.get('/random/:id', (schema, request) => {
+        let count = request.params.id || 1;
+        return schema.quotes.find(
+          Array.from(Array(Number(count)), (_, idx) => idx + 1)
+        );
+      });
+    },
+    serializers: {
+      application: RestSerializer.extend({
+        // https://miragejs.com/api/classes/serializer/#embed
+        embed: true,
+        // https://miragejs.com/api/classes/serializer/#root
+        root: false,
+      }),
     },
   });
 }

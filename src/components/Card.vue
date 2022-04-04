@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div v-if="!result" class="loader-container">
+    <div v-if="!data" class="loader-container" data-testid="loader">
       <div class="loader sm"></div>
       <div class="loader"></div>
       <div class="loader sm"></div>
@@ -8,23 +8,23 @@
       <div class="loader sm"></div>
       <div class="loader"></div>
     </div>
-    <div v-else>
+    <div v-else data-testid="data-card">
       <div>
         <h3><u>Name</u></h3>
         <h2>
-          <i>{{ result.character.name }}</i>
+          <i>{{ data.character.name }}</i>
         </h2>
       </div>
       <div>
         <h3><u>House</u></h3>
         <h2>
-          <i>{{ result.character.house.name || 'N/A' }}</i>
+          <i>{{ data.character.house.name || 'N/A' }}</i>
         </h2>
       </div>
       <div>
         <h3><u>Quote</u></h3>
         <h2>
-          <i>{{ result.sentence }}</i>
+          <i>{{ data.sentence }}</i>
         </h2>
       </div>
     </div>
@@ -34,16 +34,8 @@
 <script>
 export default {
   name: 'Card',
-  data() {
-    return {
-      result: null,
-    };
-  },
-  mounted() {
-    return fetch('https://game-of-thrones-quotes.herokuapp.com/v1/random')
-      .then((res) => res.json())
-      .then((res) => (this.result = res))
-      .catch(console.error);
+  props: {
+    data: Object,
   },
 };
 </script>
