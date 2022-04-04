@@ -3,7 +3,9 @@ import { render } from '@testing-library/vue';
 
 describe('App Page - Initial Render', () => {
   it('Initial render', () => {
-    const { container } = render(App);
+    const { container } = render(App, {
+      stubs: ['router-view'],
+    });
     expect(container).toMatchSnapshot();
   });
 });
